@@ -7,7 +7,14 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const typeDefs = gql``;
+const typeDefs = gql`
+ type Matchup {
+  _id: ID!
+ }
+ type Quary {
+  matchups: [Matchup]
+ }
+`;
 const resovlers = {};
 const server = new ApolloServer([
   typeDefs,
